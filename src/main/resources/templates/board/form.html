@@ -4,8 +4,7 @@
 <head th:replace="fragments/common :: head('게시판')"></head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:replace="fragments/common :: menu('board')">
-  </nav>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:replace="fragments/common :: menu('board')"></nav>
 
   <div class="container">
     <h2>게시판</h2>
@@ -13,9 +12,9 @@
       <input type="hidden" th:field="*{id}">
       <div class="form-group">
         <label for="title">제목</label>
-        <input type="text" class="form-control" id="title"
-        th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'" th:field="*{title}" />
-        <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+        <input type="text" class="form-control"
+        th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'" id="title" th:field="*{title}">
+        <div id="validationServer03Feedback" class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
           제목 에러 메시지
         </div>
       </div>
@@ -23,8 +22,8 @@
       <div class="form-group">
         <label for="content">내용</label>
         <textarea class="form-control" id="content"
-        th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" th:field="*{content}"></textarea>
-        <div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+        th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" rows="3" th:field="*{content}"></textarea>
+        <div id="validationServer04Feedback" class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
           내용 에러 메시지
         </div>
       </div>
